@@ -41,36 +41,35 @@
 ## How to use
 ### Access Swagger UI: http://localhost:8080/swagger-ui/index.html
 
-### 
-Change the environment variables in the [compose.yml](./compose.yml) file using your email and app password from your Google account.
-```yaml
-- MAIL_USERNAME=TYPE_HERE_YOUR_EMAIL
-- MAIL_PASSWORD=TYPE_HERE_YOUR_PASSWORD
+
+
+### Installation ###
+
+1. Clone the repository:
+```bash
+git clone https://github.com/GGurol/housing-community-management.git
 ```
 
-### Build
-
-```
-docker compose build
-```
-
-### Run all
-
-```
-docker compose up
+2. Navigate the project directory:
+```bash
+cd housing-community-management
 ```
 
-### Run db in detach mode
+3. Build the docker:
+```bash
+docker compose up --build -d
+```
 
-```
-docker compose up db -d
+4. Browse:
+```bash
+http://localhost:5173/
 ```
 
-### Stop all
+(***) Instead of a real e-mail operation, integrated localhost MailHog server on:
+```bash
+http://localhost:8025
+```
 
-```
-docker compose down
-```
 
 
 ## Done / todo
