@@ -106,9 +106,9 @@ const MeterReadingsPage = () => {
         selectedApartment !== "" ? (
           isLoading ? <CircularProgress /> : (
             <div className="mt-5 gap-2 flex flex-col">
-              <UserPanelCard name={"Prąd"} meterReading={meterReading?.electricityMeterReading}
+              <UserPanelCard name={t('electricity')} meterReading={meterReading?.electricityMeterReading}
                              price={utilityPrice?.electricityPricePerUnit} />
-              <UserPanelCard name={"Woda"} meterReading={meterReading?.waterMeterReading}
+              <UserPanelCard name={t('water')} meterReading={meterReading?.waterMeterReading}
                              price={utilityPrice?.waterPricePerUnit} />
             </div>
           )

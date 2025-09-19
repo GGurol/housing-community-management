@@ -1,0 +1,311 @@
+.
+├── backend
+│   ├── Dockerfile
+│   ├── mvnw
+│   ├── mvnw.cmd
+│   ├── pom.xml
+│   └── src
+│       ├── main
+│       │   ├── java
+│       │   │   └── pl
+│       │   │       └── adamsm2
+│       │   │           └── backend
+│       │   │               ├── apartment
+│       │   │               │   ├── domain
+│       │   │               │   │   ├── Apartment.java
+│       │   │               │   │   ├── EPaymentStatus.java
+│       │   │               │   │   ├── MeterReading.java
+│       │   │               │   │   ├── PaymentStatus.java
+│       │   │               │   │   ├── repository
+│       │   │               │   │   │   ├── ApartmentRepository.java
+│       │   │               │   │   │   ├── MeterReadingRepository.java
+│       │   │               │   │   │   ├── PaymentStatusRepository.java
+│       │   │               │   │   │   └── UtilityPriceRepository.java
+│       │   │               │   │   └── UtilityPrice.java
+│       │   │               │   ├── dto
+│       │   │               │   │   ├── ApartmentResource.java
+│       │   │               │   │   ├── ChangeApartmentOwnerRequest.java
+│       │   │               │   │   ├── CreateApartmentRequest.java
+│       │   │               │   │   ├── MeterReadingRequest.java
+│       │   │               │   │   ├── MeterReadingResource.java
+│       │   │               │   │   ├── SetUtilityPricesRequest.java
+│       │   │               │   │   ├── UpdateApartmentRequest.java
+│       │   │               │   │   ├── UpdateUtilityPricesRequest.java
+│       │   │               │   │   └── UtilityPricesResource.java
+│       │   │               │   ├── service
+│       │   │               │   │   ├── mapper
+│       │   │               │   │   │   ├── ApartmentMapper.java
+│       │   │               │   │   │   ├── internal
+│       │   │               │   │   │   │   ├── ApartmentMapperService.java
+│       │   │               │   │   │   │   ├── MeterReadingMapperService.java
+│       │   │               │   │   │   │   └── UtilityPriceMapperService.java
+│       │   │               │   │   │   ├── MeterReadingMapper.java
+│       │   │               │   │   │   └── UtilityPriceMapper.java
+│       │   │               │   │   └── usecase
+│       │   │               │   │       ├── ApartmentUseCases.java
+│       │   │               │   │       ├── internal
+│       │   │               │   │       │   ├── ApartmentService.java
+│       │   │               │   │       │   ├── MeterReadingService.java
+│       │   │               │   │       │   └── UtilityPriceService.java
+│       │   │               │   │       ├── MeterReadingUseCases.java
+│       │   │               │   │       └── UtilityPriceUseCases.java
+│       │   │               │   └── web
+│       │   │               │       ├── AdminApartmentController.java
+│       │   │               │       ├── AdminMeterReadingController.java
+│       │   │               │       ├── AdminUtilityPriceController.java
+│       │   │               │       ├── ApartmentController.java
+│       │   │               │       ├── MeterReadingController.java
+│       │   │               │       └── UtilityPriceController.java
+│       │   │               ├── BackendApplication.java
+│       │   │               ├── config
+│       │   │               │   ├── FakerConfig.java
+│       │   │               │   └── OpenApiConfig.java
+│       │   │               ├── security
+│       │   │               │   ├── CorsConfig.java
+│       │   │               │   ├── CustomAuthenticationEntryPoint.java
+│       │   │               │   ├── JwtFilter.java
+│       │   │               │   ├── JwtUtils.java
+│       │   │               │   ├── SecurePasswordManager.java
+│       │   │               │   └── SecurityConfig.java
+│       │   │               ├── shared
+│       │   │               │   ├── exception
+│       │   │               │   │   ├── RestResponseEntityExceptionHandler.java
+│       │   │               │   │   └── UserEmailNotVerifiedException.java
+│       │   │               │   ├── seeder
+│       │   │               │   │   ├── ApartmentSeeder.java
+│       │   │               │   │   ├── DatabaseSeeder.java
+│       │   │               │   │   ├── Seeder.java
+│       │   │               │   │   └── UserSeeder.java
+│       │   │               │   └── utils
+│       │   │               │       ├── ApiEndpoints.java
+│       │   │               │       └── DateTimeProvider.java
+│       │   │               ├── TestController.java
+│       │   │               └── user
+│       │   │                   ├── domain
+│       │   │                   │   ├── Announcement.java
+│       │   │                   │   ├── MailMessage.java
+│       │   │                   │   ├── RefreshToken.java
+│       │   │                   │   ├── repository
+│       │   │                   │   │   ├── AnnouncementRepositoryExtensions.java
+│       │   │                   │   │   ├── AnnouncementRepository.java
+│       │   │                   │   │   ├── internal
+│       │   │                   │   │   │   ├── RelationalAnnouncementRepository.java
+│       │   │                   │   │   │   ├── RelationalRefreshTokenRepository.java
+│       │   │                   │   │   │   └── RelationalUserRepository.java
+│       │   │                   │   │   ├── RefreshTokenRepositoryExtensions.java
+│       │   │                   │   │   ├── RefreshTokenRepository.java
+│       │   │                   │   │   ├── UserRepositoryExtensions.java
+│       │   │                   │   │   └── UserRepository.java
+│       │   │                   │   ├── Role.java
+│       │   │                   │   ├── Token.java
+│       │   │                   │   ├── User.java
+│       │   │                   │   └── VerificationCode.java
+│       │   │                   ├── dto
+│       │   │                   │   ├── AccessTokenResource.java
+│       │   │                   │   ├── AnnouncementResource.java
+│       │   │                   │   ├── AuthResource.java
+│       │   │                   │   ├── CreateAnnouncementRequest.java
+│       │   │                   │   ├── LoginUserRequest.java
+│       │   │                   │   ├── RefreshTokenResource.java
+│       │   │                   │   ├── RegisterUserRequest.java
+│       │   │                   │   ├── ResendVerificationEmailRequest.java
+│       │   │                   │   ├── UserResource.java
+│       │   │                   │   └── VerifyEmailRequest.java
+│       │   │                   ├── service
+│       │   │                   │   ├── mapper
+│       │   │                   │   │   ├── AnnouncementMapper.java
+│       │   │                   │   │   ├── internal
+│       │   │                   │   │   │   ├── AnnouncementMapperService.java
+│       │   │                   │   │   │   └── UserMapperService.java
+│       │   │                   │   │   └── UserMapper.java
+│       │   │                   │   └── usecase
+│       │   │                   │       ├── AnnouncementUseCases.java
+│       │   │                   │       ├── Authenticator.java
+│       │   │                   │       ├── internal
+│       │   │                   │       │   ├── AnnouncementService.java
+│       │   │                   │       │   ├── AuthenticatorService.java
+│       │   │                   │       │   ├── CustomUserDetailsService.java
+│       │   │                   │       │   ├── FakeMailService.java
+│       │   │                   │       │   ├── MailService.java
+│       │   │                   │       │   └── UserService.java
+│       │   │                   │       ├── MailUseCases.java
+│       │   │                   │       └── UserUseCases.java
+│       │   │                   └── web
+│       │   │                       ├── AdminAnnouncementController.java
+│       │   │                       ├── AdminUserController.java
+│       │   │                       ├── AnnouncementController.java
+│       │   │                       └── UserController.java
+│       │   └── resources
+│       │       ├── application-dev.yml
+│       │       ├── application-local.yml
+│       │       └── application.yml
+│       └── test
+│           ├── java
+│           │   ├── integration
+│           │   │   └── pl
+│           │   │       └── adamsm2
+│           │   │           └── backend
+│           │   │               ├── BackendApplicationTests.java
+│           │   │               ├── BackendTestConfig.java
+│           │   │               └── UserModuleTest.java
+│           │   ├── shared
+│           │   │   └── pl
+│           │   │       └── adamsm2
+│           │   │           └── backend
+│           │   │               ├── RefreshTokenTestDataProvider.java
+│           │   │               ├── shared
+│           │   │               │   └── utils
+│           │   │               │       └── TestDateTimeProvider.java
+│           │   │               └── UserTestDataProvider.java
+│           │   └── unit
+│           │       └── pl
+│           │           └── adamsm2
+│           │               └── backend
+│           │                   └── user
+│           │                       ├── service
+│           │                       │   ├── mapper
+│           │                       │   │   └── internal
+│           │                       │   │       └── UserMapperProvider.java
+│           │                       │   └── usecase
+│           │                       │       └── internal
+│           │                       │           ├── InMemoryRefreshTokenRepository.java
+│           │                       │           ├── InMemoryUserRepository.java
+│           │                       │           └── UserServiceTest.java
+│           │                       └── TestPasswordEncoder.java
+│           └── resources
+│               └── application-test.yml
+├── compose.yml
+├── frontend
+│   ├── Dockerfile
+│   ├── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── postcss.config.js
+│   ├── public
+│   │   └── vite.svg
+│   ├── README.md
+│   ├── src
+│   │   ├── api
+│   │   │   ├── apartment.ts
+│   │   │   ├── client.ts
+│   │   │   ├── dto
+│   │   │   │   ├── ChangeApartmentOwnerRequest.ts
+│   │   │   │   ├── CreateAnnouncementRequest.ts
+│   │   │   │   ├── CreateApartmentRequest.ts
+│   │   │   │   ├── LoginUserRequest.ts
+│   │   │   │   ├── MeterReadingsRequest.ts
+│   │   │   │   ├── RegisterUserRequest.ts
+│   │   │   │   ├── SetUtilityPricesRequest.ts
+│   │   │   │   ├── UserDataResource.ts
+│   │   │   │   └── VerifyEmailRequest.ts
+│   │   │   └── user.ts
+│   │   ├── App.tsx
+│   │   ├── assets
+│   │   │   ├── english-flag.png
+│   │   │   ├── osiedla1.jpg
+│   │   │   ├── osiedla2.png
+│   │   │   ├── osiedla3.png
+│   │   │   ├── osiedla4.png
+│   │   │   ├── polish-flag.png
+│   │   │   └── react.svg
+│   │   ├── components
+│   │   │   ├── forms
+│   │   │   │   ├── AppForm.tsx
+│   │   │   │   ├── CreateAnnouncementForm.tsx
+│   │   │   │   ├── CreateApartmentForm.tsx
+│   │   │   │   ├── FormField.tsx
+│   │   │   │   ├── LoginUserForm.tsx
+│   │   │   │   ├── RegisterUserForm.tsx
+│   │   │   │   ├── schemas
+│   │   │   │   │   ├── create-announcement.ts
+│   │   │   │   │   ├── create-apartment.ts
+│   │   │   │   │   ├── login-user.ts
+│   │   │   │   │   ├── register-user.ts
+│   │   │   │   │   ├── set-utility-prices.ts
+│   │   │   │   │   ├── update-meters-readings.ts
+│   │   │   │   │   └── user-credentials.ts
+│   │   │   │   ├── SetUtilityPricesForm.tsx
+│   │   │   │   ├── UpdateMeterReadingsForm.tsx
+│   │   │   │   └── VerifyEmailForm.tsx
+│   │   │   ├── layout
+│   │   │   │   ├── AdminPanelNavigation.tsx
+│   │   │   │   ├── Footer.tsx
+│   │   │   │   ├── Navbar.tsx
+│   │   │   │   ├── OptionsMenu.tsx
+│   │   │   │   ├── PanelNavigation.tsx
+│   │   │   │   ├── RootLayout.tsx
+│   │   │   │   ├── SmallScreenMenu.tsx
+│   │   │   │   ├── UserPanelNavigation.tsx
+│   │   │   │   └── UserPanelSidebar.tsx
+│   │   │   └── ui
+│   │   │       ├── ApartmentCard.tsx
+│   │   │       ├── InputOtp.tsx
+│   │   │       ├── JumpUpButton.tsx
+│   │   │       ├── LanguageSwitch.tsx
+│   │   │       ├── NavbarButton.tsx
+│   │   │       ├── NavigateButton.tsx
+│   │   │       ├── NavigateFormButton.tsx
+│   │   │       ├── ResendVerificationCodeButton.tsx
+│   │   │       ├── SidebarButton.tsx
+│   │   │       ├── SubmitFormButton.tsx
+│   │   │       ├── ThemeSwitch.tsx
+│   │   │       └── UserPanelCard.tsx
+│   │   ├── hooks
+│   │   │   ├── reduxHooks.ts
+│   │   │   ├── useInitApp.ts
+│   │   │   └── useNavbarItems.ts
+│   │   ├── i18n.ts
+│   │   ├── index.css
+│   │   ├── locale
+│   │   │   ├── languages.ts
+│   │   │   └── translations.ts
+│   │   ├── localstorage-keys.ts
+│   │   ├── main.tsx
+│   │   ├── models
+│   │   │   ├── Apartment.ts
+│   │   │   ├── MeterReading.ts
+│   │   │   ├── User.ts
+│   │   │   └── UtilityPrice.ts
+│   │   ├── pages
+│   │   │   ├── Admin
+│   │   │   │   ├── ApartmentsListPage.tsx
+│   │   │   │   ├── CreateAnnouncementPage.tsx
+│   │   │   │   ├── CreateApartmentPage.tsx
+│   │   │   │   ├── EditOwnerEmailModal.tsx
+│   │   │   │   ├── SetUtilityPricesPage.tsx
+│   │   │   │   └── UpdateMeterReadingsPage.tsx
+│   │   │   ├── Announcement
+│   │   │   │   └── AnnouncementsPage.tsx
+│   │   │   ├── Auth
+│   │   │   │   ├── LoginPage.tsx
+│   │   │   │   ├── RegisterPage.tsx
+│   │   │   │   └── VerifyEmailPage.tsx
+│   │   │   ├── Home
+│   │   │   │   ├── HomePage.tsx
+│   │   │   │   ├── ImageSwiperSection.tsx
+│   │   │   │   ├── IntroductionSection.tsx
+│   │   │   │   └── UserPanelPresentationSection.tsx
+│   │   │   └── User
+│   │   │       └── MeterReadingsPage.tsx
+│   │   ├── redux
+│   │   │   ├── apartmentsSlice.ts
+│   │   │   ├── authActions.ts
+│   │   │   ├── authConstants.ts
+│   │   │   ├── authSlice.ts
+│   │   │   └── store.ts
+│   │   ├── router
+│   │   │   ├── AuthRoute.tsx
+│   │   │   ├── paths.ts
+│   │   │   ├── ProtectedAdminRoute.tsx
+│   │   │   ├── ProtectedRoute.tsx
+│   │   │   └── router.tsx
+│   │   ├── ThemeProvider.tsx
+│   │   └── vite-env.d.ts
+│   ├── tailwind.config.js
+│   ├── tsconfig.json
+│   ├── tsconfig.node.json
+│   └── vite.config.ts
+├── README.md
+└── tree.txt
+
+81 directories, 228 files

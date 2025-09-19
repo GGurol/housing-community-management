@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next"; // 1. ADDED: The missing import for the 't' function
+
 interface UserPanelCardProps {
   name: string,
   meterReading?: number,
@@ -5,6 +7,8 @@ interface UserPanelCardProps {
 }
 
 const UserPanelCard = ({ name, meterReading, price }: UserPanelCardProps) => {
+  const { t } = useTranslation(); // This line now works correctly
+
   return (
     <div className="relative cursor-pointer">
       <div
@@ -12,12 +16,15 @@ const UserPanelCard = ({ name, meterReading, price }: UserPanelCardProps) => {
         <div className="flex-row items-center">
           <h3 className="my-2 text-lg font-bold text-textTitle">{name}</h3>
         </div>
+        
+        {/* 2. CORRECTED: JSX formatting with template literals */}
         <p className="text-textContent">
-          Odczyt z licznika: {meterReading ? meterReading : "Brak danych"}
+          {`${t('meterReadingLabel')}: ${meterReading ? meterReading : t('noData')}`}
         </p>
         <p className="text-textContent">
-          Przewidywana opłata: {meterReading && price ? meterReading * price : "Brak danych"}
+          {`${t('estimatedFeeLabel')}: ${meterReading && price ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(meterReading * price) : t('noData')}`}
         </p>
+
       </div>
     </div>
   );

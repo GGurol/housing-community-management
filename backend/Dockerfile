@@ -3,6 +3,8 @@ FROM eclipse-temurin:17-jdk-alpine AS builder
 WORKDIR app
 
 COPY mvnw .
+# ADDED: Make the Maven wrapper executable before running it
+RUN chmod +x mvnw
 COPY .mvn .mvn
 COPY pom.xml .
 RUN ./mvnw dependency:go-offline

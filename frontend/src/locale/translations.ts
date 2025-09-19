@@ -100,6 +100,13 @@ const translations = {
       waterMeterReading: "Water meter reading",
       paymentStatus: "Payment status",
       paymentStatusRequired: "Please provide a payment status",
+      electricity: "Electricity",
+      water: "Water",
+      meterReadingLabel: "Meter Reading",
+      estimatedFeeLabel: "Estimated Fee",
+      noData: "No Data",
+      meter_readings: "Meter Readings",
+
     },
   },
   [POLISH.code]: {
@@ -202,6 +209,12 @@ const translations = {
       waterMeterReading: "Odczyt wody",
       paymentStatus: "Status płatności",
       paymentStatusRequired: "Podaj status płatności",
+      electricity: "Prąd",
+      water: "Woda",
+      meterReadingLabel: "Odczyt z licznika",
+      estimatedFeeLabel: "Przewidywana opłata",
+      noData: "Brak danych",
+      meter_readings: "Stany liczników",
     },
   },
 };
