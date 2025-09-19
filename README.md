@@ -70,6 +70,14 @@ http://localhost:5173/
 http://localhost:8025
 ```
 
+(****) Auto-populated User's Info:
+```bash
+    ADMIN EMAIL = "admin@gmail.com";
+    ADMIN PASSWORD = "admin123";
+    USER EMAIL = "test@gmail.com";
+    USER PASSWORD = "password";
+```
+
 
 
 ## Done / todo
